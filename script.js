@@ -44,6 +44,7 @@ function listarRegistros() {
     lista.appendChild(item);
   });
 }
+
 function salvarQuestao() {
   const resposta = document.getElementById('respostaMarcada').value.trim().toUpperCase();
   const gabarito = document.getElementById('gabaritoOficial').value.trim().toUpperCase();
