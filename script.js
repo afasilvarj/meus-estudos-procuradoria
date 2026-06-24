@@ -80,3 +80,44 @@ function listarQuestoes() {
     lista.appendChild(item);
   });
 }
+
+function exportarBackup() {
+  const dados = {
+    registrosEstudo: JSON.parse(localStorage.getItem('registrosEstudo')) || [],
+    questoes: JSON.parse(localStorage.getItem('questoes')) || []
+  };
+
+  const blob = new Blob([JSON.stringify(dados, null, 2)], {
+    type: 'application/json'
+  });
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'backup-estudos.json';
+  link.click();
+}
+
+function importarBackup() {
+  const arquivo = document.getElementById('arquivoBackup').files[0];
+
+  if (!arquivo) {
+    alert('Selecione um arquivo de backup.');
+    return;
+  }
+
+  const leitor = new FileReader();
+
+  leitor.onload = function(evento) {
+    const dados = JSON.parse(evento.target.result);
+
+    localStorage.setItem('registrosEstudo', JSON.stringify(dados.registrosEstudo || []));
+    localStorage.setItem('questoes', JSON.stringify(dados.questoes || []));
+
+    listarRegistros();
+    listarQuestoes();
+
+    alert('Backup importado com sucesso.');
+  };
+
+  leitor.readAsText(arquivo);
+}
