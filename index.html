@@ -26,9 +26,19 @@
       <h2>Ciclo de Estudos</h2>
     </section>
 
-    <section id="registro" class="tela">
-      <h2>Registro Diário</h2>
-    </section>
+<section id="registro" class="tela">
+  <h2>Registro Diário</h2>
+
+  <input id="dataEstudo" type="date">
+  <input id="disciplinaEstudo" type="text" placeholder="Disciplina">
+  <input id="tempoEstudo" type="number" placeholder="Tempo em minutos">
+  <input id="conteudoEstudo" type="text" placeholder="Conteúdo estudado">
+
+  <button onclick="salvarRegistroEstudo()">Salvar registro</button>
+
+  <h3>Registros salvos</h3>
+  <ul id="listaRegistros"></ul>
+</section>
 
     <section id="gabarito" class="tela">
       <h2>Corretor de Gabaritos</h2>
