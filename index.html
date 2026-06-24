@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meus Estudos Procuradoria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Meus Estudos Procuradoria</h1>
 
+  <nav>
+    <button onclick="mostrarTela('dashboard')">Dashboard</button>
+    <button onclick="mostrarTela('ciclo')">Ciclo de Estudos</button>
+    <button onclick="mostrarTela('registro')">Registro Diário</button>
+    <button onclick="mostrarTela('gabarito')">Corretor de Gabaritos</button>
+    <button onclick="mostrarTela('backup')">Backup</button>
+  </nav>
+
+  <main>
+    <section id="dashboard" class="tela">
+      <h2>Dashboard</h2>
+      <p>Resumo geral dos seus estudos.</p>
+    </section>
+
+    <section id="ciclo" class="tela">
+      <h2>Ciclo de Estudos</h2>
+    </section>
+
+    <section id="registro" class="tela">
+      <h2>Registro Diário</h2>
+    </section>
+
+    <section id="gabarito" class="tela">
+      <h2>Corretor de Gabaritos</h2>
+    </section>
+
+    <section id="backup" class="tela">
+      <h2>Backup</h2>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
